@@ -43,7 +43,7 @@ const getNotes = asyncHandler(async (req, res) => {
   
     if (note.user.toString() !== req.user._id.toString()) {
       res.status(401);
-      throw new Error("You can't perform this action");
+      throw new Error("You can't perform this action as this note doesn't belongs to you");
     }
   
     if (note) {
@@ -64,7 +64,7 @@ const getNotes = asyncHandler(async (req, res) => {
   
     if (note.user.toString() !== req.user._id.toString()) {
       res.status(401);
-      throw new Error("You can't perform this action");
+      throw new Error("You can't perform this action as this note doesn't belongs to you");
     }
   
     if (note) {
